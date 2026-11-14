@@ -1,0 +1,386 @@
+.pageContents {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  align-items: center;
+  /* accounts for wave height, refactored to hard limit, overflow content crops */
+  height: 85vh;
+  overflow: hidden;
+}
+
+.side {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 100%;
+  gap: 4rem;
+}
+
+.navigation {
+  /* horizontal alignment logic */
+  grid-column: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  filter: drop-shadow(0 -8px 10px rgba(0, 0, 0, 0.162));
+  gap: 1rem;
+}
+
+.logo {
+  /* horizontal alignment logic */
+  grid-column: 1;
+  justify-self: start;
+
+  inset-inline: 0;
+  margin: 2rem 0px 0px 30px;
+  margin-bottom: 0.5rem;
+  width: 235px;
+  position: relative;
+  z-index: 0;
+
+  transform-origin: top left;
+
+  animation: logoIntro 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes logoIntro {
+  0% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.button {
+  font-family: var(--font-aquavit);
+  font-weight: var(--fw-regular);
+  font-style: normal;
+  font-size: clamp(1rem, calc(1rem + 1.75vw), 1.8rem);
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: filter 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
+  line-height: 1;
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 -8px 16px rgba(0, 0, 0, 0.25));
+}
+
+.button.active {
+  color: #009726;
+  text-decoration: underline;
+  /* or border-bottom: 2px solid #aa3bff; */
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+
+  font-family: var(--font-aquavit);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #666;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  transition:
+    opacity 0.15s ease-out,
+    transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tooltip-arrow {
+  width: 0.85em;
+  height: 0.85em;
+  stroke-width: 2.5;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-me {
+  font-family: var(--font-apolline);
+  font-weight: 400;
+  font-style: normal;
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 0 10rem 0;
+  max-width: 80%;
+
+  h1 {
+    font-family: inherit;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+}
+
+.projects-container {
+  font-family: var(--font-apolline);
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 0 0 0;
+  width: 80%;
+  gap: 2rem;
+
+  h1 {
+    font-family: var(--font-dinosaur);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3rem;
+  }
+  h3 {
+    font-family: inherit;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+}
+
+.projects-text {
+  align-items: flex-start;
+  width: 30%;
+}
+
+.projects-title {
+  font-family: "dinosaur", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.screen-grab-16-9 {
+  width: 50%; /* Takes up half the container width */
+  aspect-ratio: 16 / 9; /* Forces it into a widescreen shape */
+  object-fit: cover; /* Ensures the image fills that shape without stretching */
+
+  transform: scale(0.5);
+}
+
+.project-images {
+  width: 70%;
+  background-color: #009726;
+}
+
+.logoWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35ch;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.telusLogo {
+  width: 4em;
+  height: 0.85em;
+  object-fit: contain;
+  /* Optional slight offset if you want it centered precisely against the font cap-height: */
+  transform: translateY(-0.08em);
+}
+
+.reactLogo {
+  width: 3em;
+  height: 0.85em;
+  object-fit: contain;
+  /* Optional slight offset if you want it centered precisely against the font cap-height: */
+  transform: translateY(-0.08em);
+}
+
+.nextjsLogo {
+  width: 3em;
+  height: 0.85em;
+  object-fit: contain;
+  /* Optional slight offset if you want it centered precisely against the font cap-height: */
+  transform: translateY(-0.08em);
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+.wave-container {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  max-height: 15vh;
+  overflow: hidden;
+  pointer-events: none;
+  flex: 1;
+}
+
+.wave {
+  width: 100%;
+  height: 100%;
+  fill: #020202;
+  filter: drop-shadow(0 -8px 10px rgba(0, 0, 0, 0.25));
+
+  transform-origin: center bottom;
+  transform: translateY(16px);
+  overflow: visible;
+}
+
+.navigation,
+.wave-container {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.wave-parallax {
+  animation: move-forever 10s linear infinite;
+}
+
+.wave-text {
+  font-family: var(--font-aquavit);
+  font-size: 2.2px;
+  font-weight: 600;
+  fill: #020202;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .about-me {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  .button {
+    font-size: 1.25rem;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
+
+@media (max-width: 666px) {
+  .side {
+    display: flex;
+    flex-direction: column; /* stacks logo on top, nav underneath */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button {
+    font-size: 1.1rem;
+  }
+  .navigation {
+    gap: 0.5rem;
+  }
+
+  .logo {
+    margin: 1.5rem 0 0 0;
+    justify-self: center;
+    width: 115px;
+  }
+
+  .about-me {
+    padding: 3rem 0 8rem 0;
+    width: 95%;
+    font-size: 0.6rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+  }
+  .projects-text {
+    width: 90%;
+  }
+  .projects-images {
+    width: 90%;
+  }
+}
+
+/* Disable scrollbars */
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
