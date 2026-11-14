@@ -47,14 +47,16 @@
   animation: logoIntro 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
+
+/* Animation for intro scaled logo */
 @keyframes logoIntro {
   0% {
     opacity: 0;
-    transform: scale(1.4);
+    transform: scale(2);
   }
   30% {
     opacity: 1;
-    transform: scale(1.4);
+    transform: scale(2);
   }
   100% {
     opacity: 1;
@@ -142,7 +144,9 @@
 main {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .about-me {
@@ -154,7 +158,10 @@ main {
   align-items: center;
   justify-content: center;
   padding: 7rem 0 10rem 0;
-  max-width: 80%;
+  width: 90%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 
   h1 {
     font-family: inherit;
@@ -162,6 +169,13 @@ main {
     font-style: normal;
     font-size: 1.5rem;
   }
+}
+
+.favicon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  margin: 0 0.5rem;
 }
 
 .projects-container {
@@ -255,15 +269,6 @@ main {
   }
 }
 
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-
 .wave-container {
   position: fixed;
   bottom: 0px;
@@ -314,13 +319,10 @@ main {
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
   .about-me {
-    max-width: 50%;
+    max-width: 65%;
   }
-}
-
-@media (max-width: 800px) {
   .button {
     font-size: 1.25rem;
   }
@@ -353,8 +355,12 @@ main {
 
   .about-me {
     padding: 3rem 0 8rem 0;
-    width: 95%;
-    font-size: 0.6rem;
+    max-width: 90%;
+    padding-inline: 1.5rem;
+
+    h1 {
+      font-size: 1rem;
+    }
   }
 
   .projects-container {

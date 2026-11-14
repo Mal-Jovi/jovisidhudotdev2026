@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
-import joviLogo from "./assets/joviLogo.png";
+import joviLogo from "./assets/joviLogo3.png";
 import AboutMe from "./components/aboutMe";
 import Projects from "./components/projects";
 import Wave from "./components/wave";
 import Tooltip from "./components/tooltip";
+import Socials from "./components/socials";
 
 function App() {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/aboutMe" element={<AboutMe />} />
             </Routes>
+            <Socials />
           </main>
         )}
       </div>

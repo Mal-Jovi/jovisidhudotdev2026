@@ -7,7 +7,7 @@ const aboutMe = () => {
   return (
     <div className="about-me">
       <h1>
-        I am front-end developer based out of Vancouver that builds ui/ux with a
+        I am a front-end developer based out of Vancouver that builds ui/ux with a
         variety of modern tools, and most commonly with{"\u00A0\u00A0"}
         <span className="logoWrapper">
           <img src={reactLogo} alt="Telus Logo" className="reactLogo" />
