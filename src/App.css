@@ -143,10 +143,12 @@
 
 main {
   width: 100%;
+  min-height: 0; /*prevents flex child overflowing the currently 85vh page-contents container height */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  flex: 1;
 }
 
 .about-me {
@@ -157,9 +159,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7rem 0 10rem 0;
+  overflow-y: auto; /* keeps content from pushing past the social links */
+  padding: 2rem;
   width: 90%;
   max-width: 720px;
+  min-height: 0;
   margin-left: auto;
   margin-right: auto;
 
@@ -186,9 +190,10 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 7rem 0 0 0;
+  padding: 2rem 0;
   width: 80%;
   gap: 2rem;
+  flex: 1;
 
   h1 {
     font-family: var(--font-dinosaur);
@@ -227,6 +232,12 @@ main {
   width: 70%;
   background-color: #009726;
 }
+
+.socials {
+  flex-shrink: 0;
+  padding: 1rem 0;
+}
+
 
 .logoWrapper {
   display: inline-flex;
@@ -354,7 +365,6 @@ main {
   }
 
   .about-me {
-    padding: 3rem 0 8rem 0;
     max-width: 90%;
     padding-inline: 1.5rem;
 
