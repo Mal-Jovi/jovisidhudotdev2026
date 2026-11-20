@@ -6,7 +6,7 @@ const openLink = (url) => {
   window.open(url, "_blank", "noreferrer");
 }
 
-const Socials = () => {
+const Socials = ({ isProjects }) => {
   return (
     <div className="socials">
       <img src={linkedinLogo} alt="LinkedIn Logo" className="favicon"                   onClick={() => openLink("https://www.linkedin.com/in/jovi-sidhu/")} />
