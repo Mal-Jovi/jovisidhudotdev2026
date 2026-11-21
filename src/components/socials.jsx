@@ -1,4 +1,4 @@
-import "../App.css";
+import "../css/socials.css";
 import linkedinLogo from "../assets/linkedinLogo.svg";
 import githubLogo from "../assets/githubLogo.svg";
 

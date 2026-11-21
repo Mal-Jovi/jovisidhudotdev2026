@@ -1,4 +1,4 @@
-import "../App.css";
+import "../css/aboutMe.css";
 import telusLogo from "../assets/telusLogo.svg";
 import reactLogo from "../assets/reactLogo.svg";
 import nextjsLogo from "../assets/nextjsLogo.svg";

@@ -1,0 +1,11 @@
+.socials {
+  flex-shrink: 0;
+  padding: 1rem 0;
+}
+
+.favicon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  margin: 0 0.5rem;
+}
