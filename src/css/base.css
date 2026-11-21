@@ -1,0 +1,44 @@
+.pageContents {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  align-items: center;
+  /* accounts for wave height, refactored to hard limit, overflow content crops */
+  height: 85vh;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  min-height: 0; /*prevents flex child overflowing the currently 85vh page-contents container height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Disable scrollbars */
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

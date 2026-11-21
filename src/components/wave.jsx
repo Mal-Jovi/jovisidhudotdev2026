@@ -1,4 +1,4 @@
-import "../App.css";
+import "../css/wave.css";
 
 const wave = () => {
   return (

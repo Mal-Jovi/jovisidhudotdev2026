@@ -1,0 +1,72 @@
+.about-me {
+  font-family: var(--font-apolline);
+  font-weight: 400;
+  font-style: normal;
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto; /* keeps content from pushing past the social links */
+  padding: 2rem;
+  width: 90%;
+  max-width: 720px;
+  min-height: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1 {
+    font-family: inherit;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+}
+
+.logoWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35ch;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.telusLogo {
+  width: 4em;
+  height: 0.85em;
+  object-fit: contain;
+  /* Optional slight offset if you want it centered precisely against the font cap-height: */
+  transform: translateY(-0.08em);
+}
+
+.reactLogo {
+  width: 3em;
+  height: 0.85em;
+  object-fit: contain;
+  /* Optional slight offset if you want it centered precisely against the font cap-height: */
+  transform: translateY(-0.08em);
+}
+
+.nextjsLogo {
+  width: 3em;
+  height: 0.85em;
+  object-fit: contain;
+  /* Optional slight offset if you want it centered precisely against the font cap-height: */
+  transform: translateY(-0.08em);
+}
+
+@media (max-width: 900px) {
+  .about-me {
+    max-width: 65%;
+  }
+}
+
+@media (max-width: 666px) {
+  .about-me {
+    max-width: 90%;
+    padding-inline: 1.5rem;
+
+    h1 {
+      font-size: 1rem;
+    }
+  }
+}

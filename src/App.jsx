@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import "./App.css";
+import "./css/base.css";
+import "./css/navigation.css";
 import joviLogo from "./assets/joviLogo3.png";
 import AboutMe from "./components/aboutMe";
 import Projects from "./components/projects";

@@ -1,0 +1,62 @@
+.projects-container {
+  font-family: var(--font-apolline);
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  width: 80%;
+  gap: 2rem;
+  flex: 1;
+
+  h1 {
+    font-family: var(--font-dinosaur);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3rem;
+  }
+  h3 {
+    font-family: inherit;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+  }
+}
+
+.projects-text {
+  align-items: flex-start;
+  width: 30%;
+}
+
+.projects-title {
+  font-family: "dinosaur", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.screen-grab-16-9 {
+  width: 50%; /* Takes up half the container width */
+  aspect-ratio: 16 / 9; /* Forces it into a widescreen shape */
+  object-fit: cover; /* Ensures the image fills that shape without stretching */
+
+  transform: scale(0.5);
+}
+
+.project-images {
+  width: 70%;
+  background-color: #009726;
+}
+
+@media (max-width: 666px) {
+  .projects-container {
+    flex-direction: column;
+  }
+  .projects-text {
+    width: 90%;
+  }
+  .projects-images {
+    width: 90%;
+  }
+}

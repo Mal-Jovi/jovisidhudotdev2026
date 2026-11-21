@@ -1,4 +1,4 @@
-import "../App.css";
+import "../css/projects.css";
 import noryo1 from "../assets/noryo1.png";
 
 const projects = () => {
