@@ -2,6 +2,8 @@
 
 My personal portfolio site — built to showcase my work in web and mobile front-end development.
 
+The react app is hosted live using Netlify here: jovisidhu.dev
+
 ## Built With
 
 - **React** (v19) & **React Router** (v7)
